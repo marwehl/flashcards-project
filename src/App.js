@@ -1,6 +1,15 @@
 import React, {useState} from 'react';
 import Navigation from './Navigation'
 import Homepage from './Homepage'
+import GlobalStyle from './GlobalStyle'
+import styled from 'styled-components/macro'
+
+const AppStyled = styled.div`
+height: 100vh;
+display: grid;
+grid-template-rows: auto 48px;
+font-family: sans-serif;
+`
 
 
 export default function App() {
@@ -31,13 +40,14 @@ return pages[activeIndex] || <section>404</section>
 }
 
   return (
-  <div>
+  <AppStyled>
+      <GlobalStyle />
   {renderPage()}
    <Navigation 
    buttonTexts={['Home', 'Practice', 'Bookmarked', 'Settings']}
    onClick={setActiveIndex}
    />
-   </div>
+   </AppStyled>
   );
 }
 
