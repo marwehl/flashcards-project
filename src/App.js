@@ -1,9 +1,16 @@
 import React from 'react';
+import Navigation from './Navigation'
+import Homepage from '.Homepage'
 
 
 function App() {
   return (
-   <h1>Hello world</h1>
+  <>
+  {renderPage()}
+   <Navigation 
+   buttonTexts={['Home', 'Practice', 'Bookmarked', 'Settings']}
+   onClick={setActiveIndex}>/></Navigation>
+   </>
   );
 }
 
